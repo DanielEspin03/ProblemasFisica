@@ -1,4 +1,4 @@
-#1er problema
+#PRIMER EJERCICIO----------------------------------------------------
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -18,3 +18,255 @@ ax.set_xlabel('Tiempo (s)')
 ax.set_ylabel('Magnitud')
 ax.legend()
 plt.show()
+
+#SEGUNDO EJERCICIO----------------------------------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Datos del problema
+velocidad_inicial = 10  # m/s
+aceleracion = -3  # m/s²
+tiempo = 8  # segundos
+
+velocidad_final = velocidad_inicial + aceleracion * tiempo
+desplazamiento = velocidad_inicial * tiempo + 0.5 * aceleracion * tiempo**2
+t = np.linspace(0, tiempo, 100)
+velocidad = velocidad_inicial + aceleracion * t
+desplazamiento_tiempo = velocidad_inicial * t + 0.5 * aceleracion * t**2
+fig, ax = plt.subplots()
+ax.plot(t, velocidad, label='Velocidad')
+ax.plot(t, desplazamiento_tiempo, label='Desplazamiento')
+ax.set_title('Velocidad y Desplazamiento en función del Tiempo')
+ax.set_xlabel('Tiempo (s)')
+ax.set_ylabel('Magnitud')
+ax.legend()
+plt.show()
+
+print("Velocidad final:", velocidad_final, "m/s")
+print("Desplazamiento:", desplazamiento, "m")
+
+#TERCER EJERCICIO--------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Datos del problema
+velocidad_inicial = 50  # m/s
+aceleracion = 15  # m/s²
+tiempo = 6  # segundos
+
+velocidad_final = velocidad_inicial + aceleracion * tiempo
+desplazamiento = velocidad_inicial * tiempo + 0.5 * aceleracion * tiempo**2
+t = np.linspace(0, tiempo, 100)
+velocidad = velocidad_inicial + aceleracion * t
+desplazamiento_tiempo = velocidad_inicial * t + 0.5 * aceleracion * t**2
+fig, ax = plt.subplots()
+ax.plot(t, velocidad, label='Velocidad')
+ax.plot(t, desplazamiento_tiempo, label='Desplazamiento')
+ax.set_title('Velocidad y Desplazamiento en función del Tiempo')
+ax.set_xlabel('Tiempo (s)')
+ax.set_ylabel('Magnitud')
+ax.legend()
+plt.show()
+print("Velocidad final:", velocidad_final, "m/s")
+print("Desplazamiento:", desplazamiento, "m")
+
+#CUARTO EJERCICIO-----------------------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Datos del problema
+velocidad_inicial = 12  # m/s
+desaceleracion = -4  # m/s²
+tiempo = 3  # segundos
+
+velocidad_final = velocidad_inicial + desaceleracion * tiempo
+desplazamiento = velocidad_inicial * tiempo + 0.5 * desaceleracion * tiempo**2
+t = np.linspace(0, tiempo, 100)
+velocidad = velocidad_inicial + desaceleracion * t
+desplazamiento_tiempo = velocidad_inicial * t + 0.5 * desaceleracion * t**2
+fig, ax = plt.subplots()
+ax.plot(t, velocidad, label='Velocidad')
+ax.plot(t, desplazamiento_tiempo, label='Desplazamiento')
+ax.set_title('Velocidad y Desplazamiento en función del Tiempo')
+ax.set_xlabel('Tiempo (s)')
+ax.set_ylabel('Magnitud')
+ax.legend()
+plt.show()
+print("Velocidad final:", velocidad_final, "m/s")
+print("Desplazamiento:", desplazamiento, "m")
+
+#QUINTO EJERCICIO-----------------------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Datos del problema
+altura_inicial = 100  # metros
+gravedad = -9.8  # m/s²
+tiempo_caida = np.sqrt(-2 * altura_inicial / gravedad)
+velocidad_final = gravedad * tiempo_caida
+t = np.linspace(0, tiempo_caida, 100)
+velocidad = gravedad * t
+desplazamiento = 0.5 * gravedad * t**2
+fig, ax = plt.subplots()
+ax.plot(t, velocidad, label='Velocidad')
+ax.plot(t, desplazamiento, label='Desplazamiento')
+ax.set_title('Velocidad y Desplazamiento en función del Tiempo')
+ax.set_xlabel('Tiempo (s)')
+ax.set_ylabel('Magnitud')
+ax.legend()
+plt.show()
+print("Velocidad final:", velocidad_final, "m/s")
+print("Tiempo de caída:", tiempo_caida, "s")
+
+#SEXTO EJERCICIO--------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Datos del problema
+velocidad_constante = 30  # m/s
+tiempo_constante = 10  # segundos
+aceleracion = 4  # m/s²
+tiempo_aceleracion = 5  # segundos
+
+velocidad_final = velocidad_constante + aceleracion * tiempo_aceleracion
+desplazamiento_constante = velocidad_constante * tiempo_constante
+desplazamiento_aceleracion = (
+    velocidad_constante * tiempo_aceleracion +
+    0.5 * aceleracion * tiempo_aceleracion**2
+)
+desplazamiento_total = desplazamiento_constante + desplazamiento_aceleracion
+
+t_constante = np.linspace(0, tiempo_constante, 100)
+t_aceleracion = np.linspace(
+    tiempo_constante,
+    tiempo_constante + tiempo_aceleracion,
+    100
+)
+
+velocidad_constante = np.full_like(t_constante, velocidad_constante)
+velocidad_aceleracion = (
+    velocidad_constante[-1] + aceleracion * (t_aceleracion - tiempo_constante)
+)
+
+desplazamiento_constante = velocidad_constante * t_constante
+desplazamiento_aceleracion = (
+    velocidad_constante[-1] * (t_aceleracion - tiempo_constante) +
+    0.5 * aceleracion * (t_aceleracion - tiempo_constante)**2
+)
+fig, ax = plt.subplots()
+ax.plot(t_constante, velocidad_constante, label='Velocidad constante')
+ax.plot(t_aceleracion, velocidad_aceleracion, label='Aceleración')
+ax.plot(t_constante, desplazamiento_constante, label='Desplazamiento constante')
+ax.plot(t_aceleracion, desplazamiento_aceleracion, label='Desplazamiento aceleración')
+ax.set_title('Velocidad y Desplazamiento en función del Tiempo')
+ax.set_xlabel('Tiempo (s)')
+ax.set_ylabel('Magnitud')
+ax.legend()
+plt.show()
+print("Velocidad final:", velocidad_final, "m/s")
+print("Desplazamiento total:", desplazamiento_total, "m")
+
+
+
+#SEPTIMO EJERCICIO----------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Datos del problema
+velocidad_inicial = 20  # m/s
+gravedad = -9.8  # m/s²
+
+tiempo_alcance_maximo = velocidad_inicial / (-gravedad)
+altura_maxima = velocidad_inicial**2 / (-2 * gravedad)
+t = np.linspace(0, tiempo_alcance_maximo, 100)
+altura = velocidad_inicial * t + 0.5 * gravedad * t**2
+fig, ax = plt.subplots()
+ax.plot(t, altura)
+ax.set_title('Trayectoria del Proyectil')
+ax.set_xlabel('Tiempo (s)')
+ax.set_ylabel('Altura (m)')
+plt.show()
+print("Altura máxima alcanzada:", altura_maxima, "m")
+print("Tiempo para alcanzar la altura máxima:", tiempo_alcance_maximo, "s")
+
+#OCTAVO EJERCICIO------------------------------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Datos del problema
+velocidad_inicial = 10  # m/s
+aceleracion = 1.5  # m/s²
+tiempo = 20  # segundos
+
+velocidad_final = velocidad_inicial + aceleracion * tiempo
+desplazamiento = velocidad_inicial * tiempo + 0.5 * aceleracion * tiempo**2
+t = np.linspace(0, tiempo, 100)
+velocidad = velocidad_inicial + aceleracion * t
+fig, ax = plt.subplots()
+ax.plot(t, velocidad)
+ax.set_title('Velocidad del Tren')
+ax.set_xlabel('Tiempo (s)')
+ax.set_ylabel('Velocidad (m/s)')
+plt.show()
+print("Velocidad final:", velocidad_final, "m/s")
+print("Desplazamiento:", desplazamiento, "m")
+
+
+#NOVENO EJERCICIO----------------------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Datos del problema
+velocidad_constante = 5  # m/s
+tiempo_constante = 15  # segundos
+desaceleracion = -2  # m/s²
+tiempo_desaceleracion = 7  # segundos
+
+velocidad_final = velocidad_constante + desaceleracion * tiempo_desaceleracion
+desplazamiento_constante = velocidad_constante * tiempo_constante
+desplazamiento_desaceleracion = (
+    velocidad_constante * tiempo_desaceleracion
+    + 0.5 * desaceleracion * tiempo_desaceleracion**2
+)
+desplazamiento_total = desplazamiento_constante + desplazamiento_desaceleracion
+t_constante = np.linspace(0, tiempo_constante, 100)
+t_desaceleracion = np.linspace(
+    tiempo_constante,
+    tiempo_constante + tiempo_desaceleracion,
+    100
+)
+
+velocidad = np.concatenate(
+    (np.full_like(t_constante, velocidad_constante),
+     velocidad_constante + desaceleracion * (t_desaceleracion - tiempo_constante))
+)
+t = np.concatenate((t_constante, t_desaceleracion))
+fig, ax = plt.subplots()
+ax.plot(t, velocidad)
+ax.set_title('Velocidad del Objeto')
+ax.set_xlabel('Tiempo (s)')
+ax.set_ylabel('Velocidad (m/s)')
+plt.show()
+print("Velocidad final:", velocidad_final, "m/s")
+print("Desplazamiento total:", desplazamiento_total, "m")
+
+#DECIMO EJERCICIO-------------------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Datos del problema
+tiempo = 4  # segundos
+gravedad = -9.8  # m/s²
+
+velocidad_final = gravedad * tiempo
+desplazamiento = 0.5 * gravedad * tiempo**2
+t = np.linspace(0, tiempo, 100)
+velocidad = gravedad * t
+fig, ax = plt.subplots()
+ax.plot(t, velocidad)
+ax.set_title('Velocidad del Cuerpo en Caída Libre')
+ax.set_xlabel('Tiempo (s)')
+ax.set_ylabel('Velocidad (m/s)')
+plt.show()
+print("Velocidad final:", velocidad_final, "m/s")
+print("Desplazamiento:", desplazamiento, "m")
