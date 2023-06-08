@@ -1,0 +1,20 @@
+#1er problema
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Datos del problema
+aceleracion = 2  # m/s²
+tiempo = 5  # segundos
+velocidad_inicial = 0  # m/s
+
+t = np.linspace(0, tiempo, 100)
+velocidad = velocidad_inicial + aceleracion * t
+desplazamiento = velocidad_inicial * t + 0.5 * aceleracion * t**2
+fig, ax = plt.subplots()
+ax.plot(t, velocidad, label='Velocidad')
+ax.plot(t, desplazamiento, label='Desplazamiento')
+ax.set_title('Velocidad y Desplazamiento en función del Tiempo')
+ax.set_xlabel('Tiempo (s)')
+ax.set_ylabel('Magnitud')
+ax.legend()
+plt.show()
